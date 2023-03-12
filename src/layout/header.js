@@ -9,8 +9,7 @@ const Header = (props) => {
   
 
   const params = useLocation();
-  console.log(params.pathname.split("/").filter(i => i !== "")[0]);
-console.log(params)
+  
   return (
     <div>
       <header className="container-fluid bg-color">
