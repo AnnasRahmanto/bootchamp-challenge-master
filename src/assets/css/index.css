@@ -1,0 +1,262 @@
+body {
+  font-family: "Arial";
+  font-style: normal;
+}
+
+.bg-color {
+  background: #f1f3ff;
+}
+
+.bg-testimonial {
+  background: #f1f3ff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.bg-color-blue {
+  background: #0d28a6;
+}
+
+.text-p {
+  font-size: 14px;
+  font-weight: 400;
+  /* font-family: 'Arial';
+    font-style: normal; */
+  line-height: 20px;
+}
+
+.logo-position {
+  margin-left: 4rem;
+}
+
+.img-width {
+  width: 1500px;
+}
+
+.h-header {
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: 700;
+}
+
+.p-text {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.p-text-testi-footer {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.p-text-16 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.p-text-24 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.p-text-10 {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+.btn-green {
+  background: #5cb85f;
+  color: #ffffff;
+}
+
+.p-text-header {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.text-header-action {
+  font-size: 36px;
+  line-height: 150%;
+  font-weight: 700;
+  color: #ffffff;
+  /* font-family: 'Arial';
+    font-style: normal */
+}
+
+.text-action {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+section#hero div div:nth-child(1) {
+  margin-left: 94px;
+}
+section#hero div div:nth-child(2) {
+  padding-right: 0;
+}
+
+section#testimoni {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+@media (max-width: 400px) {
+  section#testimoni #intro {
+    padding: 16px;
+  }
+  section#testimoni .rate {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  section#testimoni .card-body {
+    padding: 20px 40px;
+  }
+}
+@media (max-width: 1550px) {
+  section#testimoni .rate {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  section#testimoni .card-body {
+    padding: 20px 40px;
+  }
+}
+section#testimoni .desc {
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+section#testimoni .testi-items {
+  display: flex;
+  gap: 32px;
+}
+section#testimoni .testi {
+  width: 620px;
+  height: 270px;
+  padding-left: 46px;
+  padding-right: 32px;
+  background: #f1f3ff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#testimoni .testi .text {
+  margin-left: 46px;
+}
+section#testimoni .testi .text .rate {
+  display: flex;
+}
+section#testimoni .testi .text h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px;
+}
+section#testimoni .testi .text p {
+  margin-top: 8px;
+}
+section#testimoni .button-carousel {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+}
+section#testimoni .testi-arrow {
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c4c4c4;
+}
+section#testimoni .testi-arrow-left {
+  background-color: #ffffff;
+  color: black;
+}
+
+section#testimoni .testi-arrow-right {
+  background-color: #5cb85f;
+  color: white;
+}
+
+.testi-img {
+  width: 300px;
+  height: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
+
+.text-detail {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  /* font-family: rubik; */
+  color: #8a8a8a;
+}
+
+.bg-detail {
+  background-color: #d0d0d0;
+}
+
+.text-detail-li {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 175%;
+  color: #8a8a8a;
+}
+
+.bg-modal {
+  background: black;
+  opacity: 0.6;
+}
+
+.back-drop {
+  background: black;
+  opacity: 60%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+::placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  
+}
+
+
+
+/* select {
+     font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+ 
+  color: #8a8a8a;
+} */
+
