@@ -4,6 +4,7 @@ import carLogo from "../assets/images/img_car.png";
 import Navbar from "../component/Navbar";
 import { useLocation, useNavigate } from "react-router-dom";
 
+
 const Header = (props) => {
   const navigate = useNavigate();
   
@@ -12,6 +13,7 @@ const Header = (props) => {
   
   return (
     <div>
+     
       <header className="container-fluid bg-color">
         <div className="row">
           <div className="col d-flex logo-position">
@@ -21,6 +23,7 @@ const Header = (props) => {
                   src={logoBanner}
                   className="img-fluid"
                   alt="pict-alt"
+                  onClick={()=> navigate("/")}
                 />
               </div>
             </nav>

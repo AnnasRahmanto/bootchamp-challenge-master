@@ -100,8 +100,9 @@ const HasilPencarian = (props) => {
                 </div>
                 <div className="col d-flex align-items-end">
                   <button
-                    type="submit"
+                    type="button"
                     className="btn btn-outline-primary ms-5"
+                    onClick={()=>navigate(-1)}
                   >
                     Edit
                   </button>

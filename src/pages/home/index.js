@@ -9,6 +9,7 @@ import IconProfessional from "../../assets/images/icon_professional.png";
 import VectorDown from "../../assets/images/Vector.png";
 import { useNavigate } from "react-router-dom";
 
+
 const Home = (props) => {
   const navigate = useNavigate();
   // console.log(window.location)
