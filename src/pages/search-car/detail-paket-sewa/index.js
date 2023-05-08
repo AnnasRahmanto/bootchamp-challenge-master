@@ -1,35 +1,58 @@
-import React, { useCallback, useState,useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import vectorDwn from "../../../assets/images/fi_chevron-down.png";
-import Calendar from "../../../assets/images/fi_calendar.png";
+import CalendarIcon from "../../../assets/images/fi_calendar.png";
 import Clock from "../../../assets/images/fi_clock.png";
 import User from "../../../assets/images/fi_users.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchApi } from "../../../config/services";
-import { Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
+import Calendar from "../../../component/Calendar";
+import { Token } from "../../../config/token";
 
 const carSize = {
   small: "2 - 4 orang",
   medium: "4 - 6 orang",
-  large: " 6 - 8 orang"
-}
+  large: " 6 - 8 orang",
+};
 
 const DetailCar = (props) => {
-  const [data, setData] = useState(null)
-  const [loader, setLoader] = useState("idle")
-  const {id} = useParams()
-  const fetchingCar = useCallback((params=null) => {
-    setLoader("fetching")
-    fetchApi(`https://bootcamp-rent-cars.herokuapp.com/customer/car/${id}`, params).then(result => {
-      setData(result.data)
-      setLoader("resolve")
-    }).catch(e => {
-      setLoader("reject")
-    })
-  },[id])
+  const [data, setData] = useState(null);
+  const [loader, setLoader] = useState("idle");
+  const [date, setDate] = useState()
+  const navigate = useNavigate()
+   
+ 
+    
+    
+  // console.log(date);
+  const handleClick = () => {
+    !Token ? navigate("/login") : navigate("/payment")
+  }
+  
+
+
+  const { id } = useParams();
+  const fetchingCar = useCallback(
+    (params = null) => {
+      setLoader("fetching");
+      fetchApi(
+        `https://bootcamp-rent-cars.herokuapp.com/customer/car/${id}`,
+        params
+      )
+        .then((result) => {
+          setData(result.data);
+          setLoader("resolve");
+        })
+        .catch((e) => {
+          setLoader("reject");
+        });
+    },
+    [id]
+  );
 
   useEffect(() => {
-    fetchingCar()
-  },[fetchingCar])
+    fetchingCar();
+  }, [fetchingCar]);
 
   const formatNumber = (number) =>
     new Intl.NumberFormat("id-ID", {
@@ -67,6 +90,7 @@ const DetailCar = (props) => {
                       type="image"
                       src={vectorDwn}
                       className="px-1 border border-0"
+                      alt="pict"
                     />
                   </div>
                 </div>
@@ -90,7 +114,7 @@ const DetailCar = (props) => {
                     <input
                       disabled={true}
                       type="image"
-                      src={Calendar}
+                      src={CalendarIcon}
                       alt="..."
                       className="px-1 dropbtn border border-0"
                     />
@@ -238,11 +262,29 @@ const DetailCar = (props) => {
                       {carSize[data?.category]}
                     </div>
                   </div>
+                  <div>
+                    <Calendar
+                      onChange={setDate}
+                      name="startDate"
+                      value={date}
+                    />
+                  </div>
                   <div className="d-flex flex-row justify-content-between">
                     <div className="p-2">Total</div>
                     <div className="p-2 p-text">
                       {formatNumber(data?.price)}
                     </div>
+                  </div>
+                  <div className="vstack align-self-end">
+                    <Button
+                      variant="success"
+                      disabled={!date}
+                      onClick={() =>
+                        !Token ? navigate("/login") : navigate("/payment")
+                      }
+                    >
+                      Lanjutkan Pembayaran
+                    </Button>
                   </div>
                 </div>
               </div>

@@ -250,6 +250,13 @@ section#testimoni .testi-arrow-right {
   
 }
 
+.text-12 {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #3C3C3C;
+}
+
 
 
 /* select {
@@ -259,4 +266,17 @@ section#testimoni .testi-arrow-right {
  
   color: #8a8a8a;
 } */
+.text-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.text-link:hover {
+  color:blue;
+  cursor:pointer
+}
+
+.text-link:active {
+  color: black;
+}
 

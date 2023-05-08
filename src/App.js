@@ -7,6 +7,6 @@ const App = (props) => {
       <Layout/>
     </>
   );
-};
+}; 
 
 export default App;

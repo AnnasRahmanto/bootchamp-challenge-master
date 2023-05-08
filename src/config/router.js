@@ -4,10 +4,13 @@ import Home from "../pages/home";
 import SearchCar from "../pages/search-car";
 import DetailCar from "../pages/search-car/detail-paket-sewa";
 import HasilPencarian from "../pages/search-car/hasil-pencarian";
+import Payment from "../pages/payment";
+
 
 const router = (props) => {
   return [
     { index: true, path: "/", element: <Home {...props} title="Home" /> },
+
     {
       index: true,
       path: "/cari-mobil",
@@ -21,7 +24,12 @@ const router = (props) => {
     {
       index: true,
       path: "/hasil-pencarian/",
-      element: <HasilPencarian {...props} title="Hasil Pencarian"/>,
+      element: <HasilPencarian {...props} title="Hasil Pencarian" />,
+    },
+    {
+      index: true,
+      path: "/payment",
+      element: <Payment {...props} title="Payment" />,
     },
     { index: true, path: "*", element: <div>Halaman Not Found</div> },
   ];

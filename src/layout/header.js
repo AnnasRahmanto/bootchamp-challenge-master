@@ -34,7 +34,7 @@ const Header = (props) => {
         </div>
       </header>
       {!params.pathname.split("/").filter((i) => i !== "")[1] &&
-        (!params.pathname.split("/").filter((i) => i === "hasil-pencarian")[0] && (
+        (!params.pathname.split("/").filter((i) => i === "hasil-pencarian")[0] && (!params.pathname.split("/").filter((i) => i ==="payment") [0]) && (
           <section className="bg-color">
             <div className="row row-cols-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-2">
               <div className="col-sm pt-5 ps-5 pb-5">

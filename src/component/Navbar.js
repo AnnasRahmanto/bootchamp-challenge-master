@@ -1,9 +1,11 @@
+import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
+import { Token } from "../config/token";
 
 function OffcanvasNavbar() {
 
@@ -27,7 +29,7 @@ function OffcanvasNavbar() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-center flex-grow-1 pe-3 gap-3">
+              <Nav className="justify-content-center flex-grow-1 pe-3 gap-3 align-items-center">
                 <Nav.Link>
                   <Link
                     activeClass="active"
@@ -62,6 +64,29 @@ function OffcanvasNavbar() {
                   <Link activeClass="active" to="FAQ" smooth={true} spy={true}>
                     FAQ
                   </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  {!Token ? (
+                    <Button
+                      variant="success"
+                      className="px-4 py-1"
+                      onClick={() => navigate("/login")}
+                    >
+                      Register
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="success"
+                      className="px-4 py-1"
+                      onClick={() => {
+                        localStorage.removeItem("ACCESS_TOKEN")
+                        // window.location.reload()
+                        navigate ("/")
+                    }}
+                    >
+                      Logout
+                    </Button>
+                  )}
                 </Nav.Link>
               </Nav>
             </Offcanvas.Body>
