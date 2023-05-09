@@ -79,9 +79,10 @@ function OffcanvasNavbar() {
                       variant="success"
                       className="px-4 py-1"
                       onClick={() => {
+                        navigate("/")
                         localStorage.removeItem("ACCESS_TOKEN")
-                        // window.location.reload()
-                        navigate ("/")
+                        window.location.reload()
+                        
                     }}
                     >
                       Logout
